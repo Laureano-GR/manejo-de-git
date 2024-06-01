@@ -1,14 +1,19 @@
 import math
 
-def calcular_area_circulo(radio):
+def calcularareacirculo(radio):
     return math.pi * radio ** 2
 
-def calcular_perimetro_circulo(radio):
-    return 2 * math.pi * radio
+def calculardiametrocirculo(radio):
+    return 2 * radio
 
-if __name__ == "__main__":
-    radio = float(input("Ingresa el radio del círculo: "))
-    area = calcular_area_circulo(radio)
-    perimetro = calcular_perimetro_circulo(radio)
-    print(f"El área del círculo es: {area}")
-    print(f"El perímetro del círculo es: {perimetro}")
+if __name == "__main":
+    try:
+        radio = float(input("Ingresa el radio del círculo: "))
+        if radio <= 0:
+            raise ValueError("El radio debe ser un número positivo")
+        area = calcular_area_circulo(radio)
+        diametro = calcular_diametro_circulo(radio)
+        print(f"El área del círculo es: {area}")
+        print(f"El diámetro del círculo es: {diametro}")
+    except ValueError as e:
+        print(e) 
